@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>High Scores</title>
+    <link rel="stylesheet" href="app.css" />
+    <link rel="stylesheet" href="highscores.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+      integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <!--Navbar Section-->
+    <nav class="navbar">
+      <div class="navbar__container">
+          <a id="navbar__logo"><i class="fas fa-dice-d20"></i>E-turnament
+          </a>
+          <div class="navbar__toggle" id="mobile-menu">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+          </div>
+          <ul class="navbar__menu">
+              <li class="navbar__item">
+                  <a href="index.html" class="navbar__links">Home</a>
+              </li>
+              <li class="navbar__item">
+                  <a href="index1.html" class="navbar__links">Turnament</a>
+              </li>
+              <li class="navbar__item">
+                  <a href="info.html" class="navbar__links">About Our Product</a>
+              </li>
+          </ul>
+      </div>
+  </nav> 
+    <div class="container">
+      <div id="highScores" class="flex-center flex-column">
+        <h1 id="finalScore">High Scores</h1>
+        <ul id="highScoresList"></ul>
+        <a class="btn" href="index1.html">Back To Quiz</a>
+        <button class="Click-here"  onclick="clearHighScoreList(event)">Clear</button>
+          <div class="custom-model-main">
+            <div class="custom-model-inner">
+               <div class="close-btn">×</div>
+               <div class="custom-model-wrap">
+                  <div class="pop-up-content-wrap">
+                     <h2>High Scores Cleared!</h2>
+                  </div>
+               </div>
+            </div>
+            <div class="bg-overlay"></div>
+         </div>
+      </div>
+    </div>
+    <script src="highscores.js"></script>
+    <script src="end.js"></script>
+    <!-- jQuery -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script>
+    $(".Click-here").on('click', function() {
+      $(".custom-model-main").addClass('model-open');
+    }); 
+    $(".close-btn, .bg-overlay").click(function(){
+      $(".custom-model-main").removeClass('model-open');
+    });
+    </script>
+    <script src="app.js"></script>   
+  </body>
+</html>
